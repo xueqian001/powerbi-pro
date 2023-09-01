@@ -1,0 +1,23 @@
+sogafor i in range(3953,row+1):
+    submit=ws.Cells(i,6).Value
+    if submit !=1:
+        name=ws.Cells(i,1).Value
+        print(name)
+        email=ws.Cells(i,2).Value
+        school=ws.Cells(i,3).Value
+        website=ws.Cells(i,4).Value
+        major=ws.Cells(i,5).Value
+
+
+        if str(submit) in ["None","NaT"]:
+            sumbitinfo(name,email,school,website,major,i)
+            ws.Cells(i,6).Value=1
+            xlBook.Save()
+            sleeptime=random.randint(2400, 4800)
+            print("剩余等待"+str(sleeptime)+"秒")
+            while sleeptime>20:
+                time.sleep(30)
+                sleeptime-=30
+                print("剩余等待"+str(sleeptime)+"秒")
+        else:
+            pass 
